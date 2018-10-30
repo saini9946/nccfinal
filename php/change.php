@@ -14,6 +14,6 @@ $u=$_SESSION['username'];
 <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
 <title>CHANGE </title>
 <form method="POST">
-<input type="password" name="password" placeholder="New Password">
+<input type="password" name="password" placeholder="New Password" required>
 <button type="submit" name="submit">Change Password</button>
 </form>
