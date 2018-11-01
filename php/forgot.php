@@ -24,10 +24,10 @@ $mail->SMTPAuth = true;
         $mail->SMTPSecure = "ssl";          
         $mail->Host = "smtp.gmail.com";
         $mail->Port = 465;              
-        $mail->Username='';
-        $mail->Password='';
+        $mail->Username='nccgndecofficial@gmail.com';
+        $mail->Password='nccgndec1234';
         $emails=$row['email'];
-        $mail->SetFrom('', '');
+        $mail->SetFrom('nccgndecofficial@gmail.com', 'Official NCC');
         $emails=row['email'];
         $mail->AddAddress($u);
 

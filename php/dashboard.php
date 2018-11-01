@@ -9,6 +9,9 @@ $s="SELECT * FROM attendance WHERE crn='$u'";
 $q=mysqli_query($conn,$s);
 $t="SELECT * FROM attendanceevening WHERE crn='$u'";
 $q1=mysqli_query($conn,$t);
+$t2="SELECT * FROM notices";
+$q3=mysqli_query($conn,$t2);
+$l=mysqli_fetch_assoc($q3);
 if((mysqli_num_rows($q)>0)||(mysqli_num_rows($q1)>0))
 {   if(mysqli_num_rows($q)>0)
     $row = mysqli_fetch_assoc($q);
@@ -27,6 +30,7 @@ if((mysqli_num_rows($q)>0)||(mysqli_num_rows($q1)>0))
 	$MobileNumber=$row['MobileNumber'];
 	$ClassStudying=$row['ClassStudying'];
 	$DOB=$row['DOB'];
+  $quote=$l['quote'];
 }
 ?>
 <html lang="en" >
@@ -142,7 +146,7 @@ background-image:url(headerimage1.png);
 <header class="header-fixed"></header>
 <div class="quote-box">
   <div class="quote-text">
-    <i class="fa fa-quote-left"> </i><span id="text"> The weak can never forgive. Forgiveness is the attribute of the strong. </span><i class="fa fa-quote-right"> </i>
+    <i class="fa fa-quote-left"> </i><span id="text"><?php echo $quote;?></span><i class="fa fa-quote-right"> </i>
   </div>
  </div>
 	

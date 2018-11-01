@@ -46,6 +46,12 @@ if(isset($_POST['submit6'])){
 	$q1="UPDATE footer SET emails='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 }
+if(isset($_POST['submit33'])){
+	$r=$_POST['notice33'];
+	$q1="UPDATE notices SET quote='$r' where 1";
+	$t=mysqli_query($conn,$q1);
+}
+
 ?>
 <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
 <TITLE>CHANGE HOME</TITLE>
@@ -71,6 +77,12 @@ if(isset($_POST['submit6'])){
 	<textarea name="notice3" style='height:500px;width:800px;'><?php echo $row['alumnis'];?></textarea>
 	 <br><br>
 	 <button value='submit' name='submit3'>UPDATE</button>
+	</form>
+	<br>QUOTE<br>
+	<form method='POST'>
+	<textarea name="notice33" style='height:500px;width:800px;'><?php echo $row['quote'];?></textarea>
+	 <br><br>
+	 <button value='submit' name='submit33'>UPDATE</button>
 	</form>
 	 	<form method='POST'>
 	<textarea name="notice4" style='height:200px;width:800px;'><?php echo $row1['phone'];?></textarea>

@@ -13,7 +13,7 @@ if(mysqli_num_rows($q)>0){echo "<script>alert('username already exists')</script
 else{
   $date = $_POST['dob'];
 $your_date = date("Y-m-d", strtotime($date));  
-$o="INSERT INTO attendance(email,name,password,crn,attendance,TotalLectures,CadetNumber,Rank,FatherName,MotherName,BloodGroup,MobileNumber,ClassStudying,DOB)values('".$_POST['email']."','".$_POST['name']."','".$_POST['password']."',".$_POST['username'].",0,0,".$_POST['cno'].",'".$_POST['rank']."','".$_POST['fname']."','".$_POST['mname']."','".$_POST['bgroup']."',".$_POST['mno'].",'".$_POST['cstd']."','$your_date')";
+$o="INSERT INTO attendance(email,name,password,crn,attendance,TotalLectures,CadetNumber,Rank,FatherName,MotherName,BloodGroup,MobileNumber,ClassStudying,DOB)values('".$_POST['email']."','".$_POST['name']."','".$_POST['password']."',".$_POST['username'].",0,0,'".$_POST['cno']."','".$_POST['rank']."','".$_POST['fname']."','".$_POST['mname']."','".$_POST['bgroup']."',".$_POST['mno'].",'".$_POST['cstd']."','$your_date')";
 $q=mysqli_query($conn,$o);
 header("Refresh:0; url=dashboarda.php");
 }

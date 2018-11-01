@@ -26,7 +26,7 @@ $BloodGroup=$row['BloodGroup'];
 $MobileNumber=$row['MobileNumber'];
 $ClassStudying=$row['ClassStudying'];
 if(isset($_POST['submit'])){
-    $o="UPDATE attendanceevening SET email='".$_POST['email']."',name='".$_POST['name']."',crn=".$_POST['username'].",attendance=".$_POST['attendance'].",TotalLectures=".$_POST['TotalLectures'].",CadetNumber=".$_POST['cno'].",Rank='".$_POST['rank']."',FatherName='".$_POST['fname']."',MotherName='".$_POST['mname']."',BloodGroup='".$_POST['bgroup']."',MobileNumber=".$_POST['mno'].",ClassStudying='".$_POST['cstd']."' WHERE crn='$crn'";
+    $o="UPDATE attendanceevening SET email='".$_POST['email']."',name='".$_POST['name']."',crn=".$_POST['username'].",attendance=".$_POST['attendance'].",TotalLectures=".$_POST['TotalLectures'].",CadetNumber='".$_POST['cno']."',Rank='".$_POST['rank']."',FatherName='".$_POST['fname']."',MotherName='".$_POST['mname']."',BloodGroup='".$_POST['bgroup']."',MobileNumber=".$_POST['mno'].",ClassStudying='".$_POST['cstd']."' WHERE crn='$crn'";
 $q=mysqli_query($conn,$o);
 unset($_SESSION['current']);
 header("Refresh:0; url=admin.php");
