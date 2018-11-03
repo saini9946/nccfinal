@@ -9,9 +9,9 @@ if(isset($_SESSION['usernamea'])){
 }
 require 'connect.php';
 if(isset($_POST['submit'])){
-	$u=$_POST['username'];
+	$u=mysqli_real_escape_string($conn,$_POST['username']);
 	
-	$p=$_POST['password'];
+	$p=mysqli_real_escape_string($conn,$_POST['password']);
 $s="SELECT * FROM attendance WHERE crn='$u' AND password='$p'";
 $q=mysqli_query($conn,$s);
 $t="SELECT * FROM attendanceevening WHERE crn='$u'";
@@ -32,8 +32,9 @@ header("Refresh:0; url=index.php");
 }
 }
 if(isset($_POST['submitadmin'])){
-	$u=$_POST['username'];
-	$p=$_POST['password'];
+	$u=mysqli_real_escape_string($conn,$_POST['username']);
+	
+	$p=mysqli_real_escape_string($conn,$_POST['password']);
 $s="SELECT * FROM admin WHERE email='$u' AND password='$p'";
 $q=mysqli_query($conn,$s);
 if(mysqli_num_rows($q)>0)
@@ -162,7 +163,7 @@ background-image:url(headerimage1.png);
   <div class="wrapper">
     <form class="form-signin" method="POST">       
       <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="username" placeholder="Enter Class Roll Number" required="" autofocus="" />
+      <input type="text" class="form-control" name="username" placeholder="Enter University Roll Number" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me

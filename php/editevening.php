@@ -93,12 +93,12 @@ setTimeout(function() { $("#v").fadeIn(1500); }, 4000)});
   <?php
  echo "<tbody>";
 $s="SELECT * FROM attendanceevening";
-    $q=mysqli_query($conn,$s);$i=0;$l=0;$m=0;
+    $q=mysqli_query($conn,$s);$i=0;$l=0;$m=1;
 while( $row = mysqli_fetch_assoc( $q ) ){
     $j=$row['crn'];
     $j1=$row['name'];$k='t_'.$l;
     echo"<form method='POST'><tr>
-      <th style='padding-left: 4%'>1</th>
+      <th style='padding-left: 4%'>".$m."</th>
       <td>$j</td>
       <td>$j1</td>
       <td><input type='checkbox' name='check'><button value='".$j."' name='".$k."' class='btn btn-blue'>DETAILS</button></td>
@@ -109,8 +109,6 @@ while( $row = mysqli_fetch_assoc( $q ) ){
 
   ?>
 </table>
-
-
-
+<button class="btn btn-blue"><a href="admin.php">BACK</a></h1></button>
 </body>
 </html>

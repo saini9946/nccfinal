@@ -29,7 +29,10 @@ if(isset($_POST['submit'])){
     $o="UPDATE attendance SET email='".$_POST['email']."',name='".$_POST['name']."',crn=".$_POST['username'].",attendance=".$_POST['attendance'].",TotalLectures=".$_POST['TotalLectures'].",CadetNumber='".$_POST['cno']."',Rank='".$_POST['rank']."',FatherName='".$_POST['fname']."',MotherName='".$_POST['mname']."',BloodGroup='".$_POST['bgroup']."',MobileNumber=".$_POST['mno'].",ClassStudying='".$_POST['cstd']."' WHERE crn='$crn'";
 $q=mysqli_query($conn,$o);
 unset($_SESSION['current']);
+if ($q) {
 header("Refresh:0; url=admin.php");
+exit();
+}
 }
 ?>
 <html lang="en" >
@@ -40,7 +43,12 @@ header("Refresh:0; url=admin.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
-
+<style type="text/css">
+	.wrapper
+	{
+		top: -30px;
+	}
+</style>
 </head>
 
 <body>

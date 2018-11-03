@@ -20,6 +20,12 @@ header("Refresh:0; url=dashboardevening.php");
 <html lang="en" >
 
 <head>
+	<style type="text/css">
+		.wrapper
+		{
+			height: 100%;
+		}
+	</style>
 	<link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
 
   <meta charset="UTF-8">
@@ -35,8 +41,8 @@ header("Refresh:0; url=dashboardevening.php");
 		<h1>Welcome</h1>
 		
 		<form class="form" method="POST">
-			<input type="text" placeholder="class roll number" name="username" required>
-			<button type="submit" id="login-button" name="submit" value="submit">Add</button>
+			<input type="text" placeholder="URN" name="username" required>
+			<button type="submit" id="login-button" name="submit" value="submit">DELETE</button>
 		</form>
 	</div>
 	

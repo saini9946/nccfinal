@@ -7,7 +7,7 @@ require 'connect.php';
 $i=0;
 $s="SELECT * FROM attendanceevening";
     $q=mysqli_query($conn,$s);
-echo "<form method='POST' action='dashboarda.php'>
+echo "<form method='POST' action='dashboardevening.php'>
 <table class='rwd-table' align='center'>
   <thead>
     <tr>
@@ -25,7 +25,10 @@ echo "<form method='POST' action='dashboarda.php'>
       }
       else{$i=0;
         while( $row = mysqli_fetch_assoc( $q ) ){
+          if($row['TotalLectures']!=0)
           $P=(int)((($row['attendance']/$row['TotalLectures'])*100));
+        else
+          $P=0;
           echo "<tr><td data-th='Name'>{$row['name']}</td><td data-th='CRN'>{$row['crn']}</td><td data-th='LECTURES ATTENDED'>{$row['attendance']}</td><td data-th='TOTAL LECTURES'>{$row['TotalLectures']}</td><td data-th='PERCENTAGE'>{$P}</td><td data-th='Mark Attendance'><input type='radio' name='t_".$i."' value='absent'> Absent <input type='radio' name='t_".$i."' value='present' checked> Present</tr>\n";
 
           $i++;
@@ -65,7 +68,10 @@ $i++;
 }
 $l2='UPDATE attendanceevening SET TotalLectures=(TotalLectures+1) WHERE 1';
 $q7=mysqli_query($conn,$l2);
-echo "<script type='text/javascript'>alert('Attendance Updated(Go Back And Revisit to see updated attendance)!Please Do not Refresh this Page.');</script>";
+if ($q7) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 ?>
 <html><head>

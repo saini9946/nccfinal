@@ -22,7 +22,12 @@ header("Refresh:0; url=dashboarda.php");
 
 <head>
 	<link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
-
+<style type="text/css">
+	.wrapper
+	{
+		height: 100%;
+	}
+</style>
   <meta charset="UTF-8">
   <title>Delete a User</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,8 +41,8 @@ header("Refresh:0; url=dashboarda.php");
 		<h1>Welcome</h1>
 		
 		<form class="form" method="POST">
-			<input type="text" placeholder="class roll number" name="username" required>
-			<button type="submit" id="login-button" name="submit" value="submit">Add</button>
+			<input type="text" placeholder="URN" name="username" required>
+			<button type="submit" id="login-button" name="submit" value="submit">DELETE</button>
 		</form>
 	</div>
 	

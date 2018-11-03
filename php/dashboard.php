@@ -173,7 +173,10 @@ background-image:url(headerimage1.png);
  </tr>
  <tr>
      <th>PERCENTAGE</th>
-     <td data-th="PERCENTAGE"><?php echo ((int)((($attendances/$TotalLectures)*100)));?></td>
+     <td data-th="PERCENTAGE"><?php if($row['TotalLectures']!=0)
+          $P=(int)((($row['attendance']/$row['TotalLectures'])*100));
+        else
+          $P=0;echo $P;?></td>
  </tr>
  <tr>
      <th>CADET NUMBER</th>

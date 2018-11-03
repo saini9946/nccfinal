@@ -117,6 +117,7 @@ body {
       <h2 class="form-signin-heading">Enter Your Registered Email Address</h2>
       <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" /><br>
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>   
+      <br><a href="index.php">LOGIN</a><br>
     </form>
   </div>
 </body>

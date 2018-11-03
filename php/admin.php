@@ -243,6 +243,15 @@ background-image:url(headerimage1.png);
               </span>
             </a>
       </div>
+      <div class="Btn Btn-Up orange" data-content="Click To execute">
+            <a href="lkju.php">
+              <span>
+                  <em>Execute Custom Queries</em>
+                  <i aria-hidden="true" class="fa fa-cloud-download fa-lg"></i>       
+              </span>
+            </a>
+      </div>
+
       <div class="Btn Btn-Down pink" data-content="Click To Logout!">
             <a href="logout.php">
               <span>
