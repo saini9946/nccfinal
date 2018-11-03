@@ -7,6 +7,10 @@ require 'connect.php';
 if(isset($_POST['submit'])){
 	$j=$_POST['Enter_Query'];
 	$q=mysqli_query($conn,$j);
+	if ($q) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 ?>
 <form method="post">

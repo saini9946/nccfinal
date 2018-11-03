@@ -15,41 +15,73 @@ if(isset($_POST['submit'])){
 	$r=$_POST['notice'];
 	$q1="UPDATE notices SET notice='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 if(isset($_POST['submit1'])){
 	$r=$_POST['notice1'];
 	$q1="UPDATE notices SET events='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 if(isset($_POST['submit2'])){
 	$r=$_POST['notice2'];
 	$q1="UPDATE notices SET camps='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 if(isset($_POST['submit3'])){
 	$r=$_POST['notice3'];
 	$q1="UPDATE notices SET alumnis='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 if(isset($_POST['submit4'])){
 	$r=$_POST['notice4'];
 	$q1="UPDATE footer SET phone='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 if(isset($_POST['submit5'])){
 	$r=$_POST['notice5'];
 	$q1="UPDATE footer SET email='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 if(isset($_POST['submit6'])){
 	$r=$_POST['notice6'];
 	$q1="UPDATE footer SET emails='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 if(isset($_POST['submit33'])){
 	$r=$_POST['notice33'];
 	$q1="UPDATE notices SET quote='$r' where 1";
 	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
 }
 
 ?>
