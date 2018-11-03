@@ -41,7 +41,7 @@ $mail->SMTPAuth = true;
           $msg = $ex->getMessage();
           $msgType = "warning";
         }
-    echo "<script type='text/javascript'>alert('Your Password is sent to Your Registered e-mail Address(Check Spam Folder Also');</script>";
+    echo "<script type='text/javascript'>alert('Your Password is sent to Your Registered e-mail Address(Check Spam Folder Also)');</script>";
 	header("Refresh:0; url=index.php");
 }
 else{
