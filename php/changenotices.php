@@ -74,9 +74,9 @@ header("Refresh:0; url=admin.php");
 exit();
 }
 }
-if(isset($_POST['submit33'])){
-	$r=$_POST['notice33'];
-	$q1="UPDATE notices SET quote='$r' where 1";
+if(isset($_POST['submit7'])){
+	$r=$_POST['downloads'];
+	$q1="UPDATE notices SET downloads='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
 header("Refresh:0; url=admin.php");
@@ -87,7 +87,14 @@ exit();
 ?>
 <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
 <TITLE>CHANGE HOME</TITLE>
-<form method='POST'>NOTICES<br>
+<form method='POST'>DOWNLOADS<br>
+	
+	<textarea name="downloads" style='height:500px;width:800px;'><?php echo $row['downloads'];?></textarea>
+	 <br><br>
+	 <button value='submit' name='submit7'>UPDATE</button>
+	</form>
+<form method='POST'><br>NOTICES<br>
+
 	<textarea name="notice" style='height:500px;width:800px;'><?php echo $row['notice'];?></textarea>
 	 <br><br>
 	 <button value='submit' name='submit'>UPDATE</button>

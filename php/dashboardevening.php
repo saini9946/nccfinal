@@ -9,7 +9,11 @@ $s="SELECT * FROM attendanceevening";
     $q=mysqli_query($conn,$s);
 echo "<form method='POST' action='dashboardevening.php'>
 <table class='rwd-table' align='center'>
+
   <thead>
+  <input type='date' id='dob' name='dob'
+               value='2018-01-22'
+               min='2018-01-01' max='2050-12-31' / required>
     <tr>
       <th>Name</th>
       <th>CRN</th>
@@ -47,7 +51,18 @@ echo "<form method='POST' action='dashboardevening.php'>
 
 <?php
 if (isset($_POST['submit'])) {
+    $date1 = $_POST['dob'];
+    $u99="SELECT dates FROM daterecordevening WHERE dates='$date1'";
+  $results = mysqli_query($conn,$u99);
+if((mysqli_num_rows($results)>0)) {
+  echo "<script language='javascript'>alert('Attendance of this date already exists')</script>";
+}else{
   $i=0;
+
+$z="ALTER TABLE recordevening ADD column `$date1` BOOLEAN NOT NULL";
+$z1=mysqli_query($conn,$z);
+$u98="INSERT INTO daterecordevening(dates)VALUES('".$date1."')";
+$r5=mysqli_query($conn,$u98);
   $s="SELECT * FROM attendanceevening";
     $q=mysqli_query($conn,$s);
 while( $row = mysqli_fetch_assoc( $q ) ){
@@ -56,15 +71,13 @@ while( $row = mysqli_fetch_assoc( $q ) ){
 if(isset($_POST['t_'.$i]))
 {
 if($e=='present'){
+  $r3="UPDATE `recordevening` SET `$date1`=1 WHERE 1";
+  $r4=mysqli_query($conn,$r3);
 $l="UPDATE attendanceevening SET attendance=(attendance+1) WHERE crn='$f'";
 $q7=mysqli_query($conn,$l);
-
 }
-
 }
-
 $i++;
-
 }
 $l2='UPDATE attendanceevening SET TotalLectures=(TotalLectures+1) WHERE 1';
 $q7=mysqli_query($conn,$l2);
@@ -73,14 +86,15 @@ header("Refresh:0; url=admin.php");
 exit();
 }
 }
+}
 ?>
 <html><head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
 <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
-
+<title>ATTENDANCE | EVENING</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-   <title>ATTENDANCE | EVENING</title>
+   
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <style>
 <?php include 'css/styled.css'; ?>

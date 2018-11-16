@@ -61,7 +61,8 @@ header("Refresh:0; url=index.php");
 @import "bourbon";
 
 body {
-background-image: url(https://images.static-collegedunia.com/public/college_data/images/campusimage/1410240840gndec.jpg);
+
+background-image: url(b.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -77,40 +78,11 @@ background-image: url(https://images.static-collegedunia.com/public/college_data
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
-  background-image:linear-gradient(white,#FAEBD7);
-  
+  background-color: white;
 
-  .form-signin-heading,
-	.checkbox {
-	  margin-bottom: 30px;
-	}
 
-	.checkbox {
-	  font-weight: normal;
-	}
 
-	.form-control {
-	  position: relative;
-	  font-size: 16px;
-	  height: auto;
-	  padding: 10px;
-		@include box-sizing(border-box);
-
-		&:focus {
-		  z-index: 2;
-		}
-	}
-
-	input[type="text"] {
-	  margin-bottom: -1px;
-	  border-bottom-left-radius: 0;
-	  border-bottom-right-radius: 0;
-	}
-  input[type="password"] {
-	  margin-bottom: 20px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
-	}
+	
 }
 .header-fixed {
 	
@@ -153,6 +125,12 @@ background-image:url(headerimage1.png);
 	.header-fixed{height:175px;
 
 		}}
+		br
+		{ display: block;
+		   content: ""; 
+            margin-top: 10px;
+            line-height: 10px;
+		}
 </style>
 </head>
 <body>
@@ -163,11 +141,9 @@ background-image:url(headerimage1.png);
   <div class="wrapper">
     <form class="form-signin" method="POST">       
       <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="username" placeholder="Enter University Roll Number" required="" autofocus="" />
+      <input type="text" class="form-control" name="username" placeholder="Enter University Roll Number" required="" autofocus="" /><br>
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-      </label>
+      <br>
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>
      <button class="btn btn-lg btn-primary btn-block" type="submit" name="submitadmin">Admin</button><br>
      <a href="forgot.php" style="text-decoration:none">Forgot Password</a><br>

@@ -5,7 +5,7 @@ if(!isset($_SESSION['username'])){
 }
 require 'connect.php';
 if(isset($_POST['submit']))
-{  $p=$_POST['password'];
+{  $p=mysqli_real_escape_string($conn,$_POST['password']);
 $u=$_SESSION['username'];
     $q="UPDATE attendance SET password='$p' WHERE crn='$u'";
     $s=mysqli_query($conn,$q);
@@ -82,7 +82,7 @@ body {
     <form class="form-signin" method="POST">       
       <h2 class="form-signin-heading">CHANGE PASSWORD</h2>
        <input type="password" class="form-control" name="password" placeholder="Enter New Password" required autofocus="" /><br>
-<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>    
+<button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Change Password</button>    
       <br><a href="dashboard.php">HOME</a><br>
     </form>
   </div>

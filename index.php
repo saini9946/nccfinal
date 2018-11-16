@@ -11,7 +11,7 @@ $row=mysqli_fetch_assoc($q)
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    
    <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -43,7 +43,6 @@ $row=mysqli_fetch_assoc($q)
 
 <body>
 
-    <div class="animated fadeIn" style="animation-duration: 5s;">
         <div class="header-fixed">
         
     </div>
@@ -418,7 +417,7 @@ $row=mysqli_fetch_assoc($q)
 
                     <div class="col-1-of-3">
                         <div class="footer__copyright">
-                            <p class="u-margin-bottom-very-small"><a href="download.html" id="developer_id">Downloads
+                            <p class="u-margin-bottom-very-small"><a href="download.php" id="developer_id">Downloads
                                 </a>
                             </p>
                             <p class="footer__para"><a href="developer.html" id="developer_id">Developed By
@@ -451,7 +450,7 @@ $row=mysqli_fetch_assoc($q)
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
             crossorigin="anonymous"></script>
-    </div>
+    
 </body>
 
 </html>

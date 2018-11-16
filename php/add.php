@@ -15,6 +15,8 @@ else{
 $your_date = date("Y-m-d", strtotime($date));  
 $o="INSERT INTO attendance(email,name,password,crn,attendance,TotalLectures,CadetNumber,Rank,FatherName,MotherName,BloodGroup,MobileNumber,ClassStudying,DOB)values('".$_POST['email']."','".$_POST['name']."','".$_POST['password']."',".$_POST['username'].",0,0,'".$_POST['cno']."','".$_POST['rank']."','".$_POST['fname']."','".$_POST['mname']."','".$_POST['bgroup']."',".$_POST['mno'].",'".$_POST['cstd']."','$your_date')";
 $q=mysqli_query($conn,$o);
+$o1="INSERT INTO record(crn)VALUES('".$_POST['username']."')";
+$q1=mysqli_query($conn,$o1);
 header("Refresh:0; url=dashboarda.php");
 }
 }

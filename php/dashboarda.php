@@ -9,7 +9,11 @@ $s="SELECT * FROM attendance";
     $q=mysqli_query($conn,$s);
 echo "<form method='POST' action='dashboarda.php'>
 <table class='rwd-table' align='center'>
+
   <thead>
+  <input type='date' id='dob' name='dob'
+               value='2018-01-22'
+               min='2018-01-01' max='2050-12-31' / required>
     <tr>
       <th>Name</th>
       <th>CRN</th>
@@ -47,7 +51,18 @@ echo "<form method='POST' action='dashboarda.php'>
 
 <?php
 if (isset($_POST['submit'])) {
+    $date1 = $_POST['dob'];
+    $u99="SELECT dates FROM daterecord WHERE dates='$date1'";
+  $results = mysqli_query($conn,$u99);
+if((mysqli_num_rows($results)>0)) {
+  echo "<script language='javascript'>alert('Attendance of this date already exists')</script>";
+}else{
   $i=0;
+
+$z="ALTER TABLE record ADD column `$date1` BOOLEAN NOT NULL";
+$z1=mysqli_query($conn,$z);
+$u98="INSERT INTO daterecord(dates)VALUES('".$date1."')";
+$r5=mysqli_query($conn,$u98);
   $s="SELECT * FROM attendance";
     $q=mysqli_query($conn,$s);
 while( $row = mysqli_fetch_assoc( $q ) ){
@@ -56,21 +71,20 @@ while( $row = mysqli_fetch_assoc( $q ) ){
 if(isset($_POST['t_'.$i]))
 {
 if($e=='present'){
+  $r3="UPDATE `record` SET `$date1`=1 WHERE 1";
+  $r4=mysqli_query($conn,$r3);
 $l="UPDATE attendance SET attendance=(attendance+1) WHERE crn='$f'";
 $q7=mysqli_query($conn,$l);
-
 }
-
 }
-
 $i++;
-
 }
 $l2='UPDATE attendance SET TotalLectures=(TotalLectures+1) WHERE 1';
 $q7=mysqli_query($conn,$l2);
 if ($q7) {
 header("Refresh:0; url=admin.php");
 exit();
+}
 }
 }
 ?>

@@ -42,6 +42,7 @@ if((mysqli_num_rows($q)>0)||(mysqli_num_rows($q1)>0))
   <title>Student Dashboard</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 
+  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
@@ -142,18 +143,24 @@ background-image:url(headerimage1.png);
 
 </head>
 
-<body style="background-image:linear-gradient(white,#FAEBD7);">
+<body>
 <header class="header-fixed"></header>
 <div class="quote-box">
   <div class="quote-text">
     <i class="fa fa-quote-left"> </i><span id="text"><?php echo $quote;?></span><i class="fa fa-quote-right"> </i>
   </div>
- </div>
-	
+ </div><br><br>
+	  <?php  
+                $query = "SELECT * FROM tbl_images WHERE crn=".$_SESSION['username']."";  
+                $result = mysqli_query($conn, $query);  
+              $row1 = mysqli_fetch_array($result); 
+                     echo '<img style="margin-left:40%;" src="data:image/jpeg;base64,'.base64_encode($row1['name'] ).'" height="200" width="200" class="img-thumnail" />'; 
+                ?>
 <table class="rwd-table">
+
   <tr>
-    <th>NAME</th>
-     <td data-th="NAME" ><?php echo $name;?></td>
+    <th style="padding-left: 10em;">NAME</th>
+     <td><?php echo $name;?></td>
   </tr>
    <tr>
      <th>FATHER NAME</th>
@@ -165,7 +172,7 @@ background-image:url(headerimage1.png);
  </tr>
   <tr>
      <th>LECTURES ATTENDED</th>
-    <td data-th="LECTURES ATTENDED" ><?php echo $attendances;?></td>
+    <td data-th="LECTURES ATTENDED" ><?php echo $attendances;?>&nbsp&nbsp<a href="know.php"><button class="btn">DETAILS</button></a></td>
   </tr>
  <tr>
      <th>TOTAL LECTURES</th>
@@ -230,6 +237,14 @@ background-image:url(headerimage1.png);
     text-decoration: none;
     display: inline-block;
     font-size: 16px;">Change Password</button></a>
+     <a style="text-decoration:none;color:white;" href="upload.php"><button style="background-color: #34495E;
+    border: none;
+    color: white;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;">Upload Image</button></a>
 </body>
 
 </html>
