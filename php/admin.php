@@ -268,14 +268,6 @@ background-image:url(headerimage1.png);
             </a>
       </div>
       <div class="Btn Btn-Up orange" data-content="Click To Mark">
-            <a href="docustom.php">
-              <span>
-                  <em>Upload Custom File</em>
-                  <i aria-hidden="true" class="fa fa-cloud-download fa-lg"></i>       
-              </span>
-            </a>
-      </div>
-      <div class="Btn Btn-Up orange" data-content="Click To Mark">
             <a href="unlink.php">
               <span>
                   <em>Delete a File</em>

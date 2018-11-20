@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['usernamea'])){
     header("Refresh:0; url=index.php");
 }
-if(isset(($_POST['submit']))){
+if(isset($_POST['submit'])){
 $file = $_POST['filename'];
 if (!unlink($file))
   {
