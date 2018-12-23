@@ -71,7 +71,7 @@ while( $row = mysqli_fetch_assoc( $q ) ){
 if(isset($_POST['t_'.$i]))
 {
 if($e=='present'){
-  $r3="UPDATE `record` SET `$date1`=1 WHERE 1";
+  $r3="UPDATE `record` SET `$date1`=1 WHERE crn='$f'";
   $r4=mysqli_query($conn,$r3);
 $l="UPDATE attendance SET attendance=(attendance+1) WHERE crn='$f'";
 $q7=mysqli_query($conn,$l);
