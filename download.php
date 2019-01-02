@@ -2,6 +2,7 @@
 require 'php/connect.php';
 $r="SELECT * FROM files";
 $t=mysqli_query($conn,$r);
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,8 +77,8 @@ $t=mysqli_query($conn,$r);
                 <div class="col-1-of-2">
                     <ul><?php 
                         while($row1=mysqli_fetch_assoc($t)){
-                       
-                        echo '<li><a href="data:'.$row1['type'].';base64,'.base64_encode($row1['file'] ).'" download="'.$row1['name'].'">'.$row1['name'].'</a></li>';echo '<br/>';
+                       $ex=strtolower(end(explode('/',$row1['type'])));
+                        echo '<li><a href="data:'.$row1['type'].';base64,'.base64_encode($row1['file'] ).'" download="'.$row1['name'].'.'.$ex.'">'.$row1['name'].'</a></li>';echo '<br/>';
                     };
                         ?>
                     </ul>
