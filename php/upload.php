@@ -12,7 +12,7 @@ if(!isset($_SESSION['username'])){
       $t2=mysqli_query($conn,$t);
       if(mysqli_num_rows($t2)>0)
       {
-        $query = "UPDATE tbl_images SET name='$file'";  
+        $query = "UPDATE tbl_images SET name='$file' WHERE crn='$qw'";  
       }
       else
       $query = "INSERT INTO tbl_images(crn,name) VALUES ('$qw','$file')";  

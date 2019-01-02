@@ -1,6 +1,6 @@
 <?php
 require 'php/connect.php';
-$r="SELECT downloads FROM notices";
+$r="SELECT * FROM files";
 $t=mysqli_query($conn,$r);
 ?>
 <!DOCTYPE html>
@@ -75,8 +75,9 @@ $t=mysqli_query($conn,$r);
             <div class="row1">
                 <div class="col-1-of-2">
                     <ul><?php 
-                        while($row=mysqli_fetch_assoc($t)){
-                        echo $row['downloads'];
+                        while($row1=mysqli_fetch_assoc($t)){
+                       
+                        echo '<li><a href="data:'.$row1['type'].';base64,'.base64_encode($row1['file'] ).'" download="'.$row1['name'].'">'.$row1['name'].'</a></li>';echo '<br/>';
                     };
                         ?>
                     </ul>

@@ -12,7 +12,7 @@ $p='SELECT * FROM footer';
 $q1=mysqli_query($conn,$p);
 $row1=mysqli_fetch_assoc($q1);
 if(isset($_POST['submit'])){
-	$r=$_POST['notice'];
+	$r=mysqli_real_escape_string($conn,$_POST['notice']);
 	$q1="UPDATE notices SET notice='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
@@ -20,8 +20,17 @@ header("Refresh:0; url=admin.php");
 exit();
 }
 }
+if(isset($_POST['submit33'])){
+	$r=mysqli_real_escape_string($conn,$_POST['notice33']);
+	$q1="UPDATE notices SET quote='$r' where 1";
+	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
+}
 if(isset($_POST['submit1'])){
-	$r=$_POST['notice1'];
+	$r=mysqli_real_escape_string($conn,$_POST['notice1']);
 	$q1="UPDATE notices SET events='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
@@ -30,7 +39,7 @@ exit();
 }
 }
 if(isset($_POST['submit2'])){
-	$r=$_POST['notice2'];
+	$r=mysqli_real_escape_string($conn,$_POST['notice2']);
 	$q1="UPDATE notices SET camps='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
@@ -39,7 +48,7 @@ exit();
 }
 }
 if(isset($_POST['submit3'])){
-	$r=$_POST['notice3'];
+	$r=mysqli_real_escape_string($conn,$_POST['notice3']);
 	$q1="UPDATE notices SET alumnis='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
@@ -48,7 +57,7 @@ exit();
 }
 }
 if(isset($_POST['submit4'])){
-	$r=$_POST['notice4'];
+	$r=mysqli_real_escape_string($conn,$_POST['notice4']);
 	$q1="UPDATE footer SET phone='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
@@ -57,7 +66,7 @@ exit();
 }
 }
 if(isset($_POST['submit5'])){
-	$r=$_POST['notice5'];
+	$r=mysqli_real_escape_string($conn,$_POST['notice5']);
 	$q1="UPDATE footer SET email='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
@@ -66,7 +75,7 @@ exit();
 }
 }
 if(isset($_POST['submit6'])){
-	$r=$_POST['notice6'];
+	$r=$mysqli_real_escape_string($conn,_POST['notice6']);
 	$q1="UPDATE footer SET emails='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
@@ -74,25 +83,13 @@ header("Refresh:0; url=admin.php");
 exit();
 }
 }
-if(isset($_POST['submit7'])){
-	$r=$_POST['downloads'];
-	$q1="UPDATE notices SET downloads='$r' where 1";
-	$t=mysqli_query($conn,$q1);
-	if ($t) {
-header("Refresh:0; url=admin.php");
-exit();
-}
-}
+
+
 
 ?>
 <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
 <TITLE>CHANGE HOME</TITLE>
-<form method='POST'>DOWNLOADS<br>
-	
-	<textarea name="downloads" style='height:500px;width:800px;'><?php echo $row['downloads'];?></textarea>
-	 <br><br>
-	 <button value='submit' name='submit7'>UPDATE</button>
-	</form>
+
 <form method='POST'><br>NOTICES<br>
 
 	<textarea name="notice" style='height:500px;width:800px;'><?php echo $row['notice'];?></textarea>

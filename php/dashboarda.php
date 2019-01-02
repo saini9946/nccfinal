@@ -12,8 +12,8 @@ echo "<form method='POST' action='dashboarda.php'>
 
   <thead>
   <input type='date' id='dob' name='dob'
-               value='2018-01-22'
-               min='2018-01-01' max='2050-12-31' / required>
+               value='2019-01-01'
+               min='2019-01-01' max='2050-12-31' / required>
     <tr>
       <th>Name</th>
       <th>CRN</th>

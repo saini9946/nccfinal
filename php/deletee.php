@@ -13,6 +13,10 @@ if(!mysqli_num_rows($q)>0){echo "<script>alert('username Does Not exists')</scri
 else{
 $o="DELETE FROM attendanceevening WHERE crn='$u'";
 $q=mysqli_query($conn,$o);
+$o1="DELETE FROM recordevening WHERE crn='$u'";
+$q=mysqli_query($conn,$o1);
+$o1="DELETE FROM tbl_images WHERE crn='$u'";
+$q=mysqli_query($conn,$o1);
 header("Refresh:0; url=dashboardevening.php");
 }
 }

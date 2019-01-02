@@ -16,6 +16,8 @@ $o="DELETE FROM attendance WHERE crn='$u'";
 $q=mysqli_query($conn,$o);
 $o1="DELETE FROM record WHERE crn='$u'";
 $q=mysqli_query($conn,$o1);
+$o1="DELETE FROM tbl_images WHERE crn='$u'";
+$q=mysqli_query($conn,$o1);
 header("Refresh:0; url=dashboarda.php");
 }
 }

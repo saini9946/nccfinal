@@ -1,18 +1,16 @@
 <?php
 session_start();
+require 'connect.php';
 if(!isset($_SESSION['usernamea'])){
     header("Refresh:0; url=index.php");
 }
 if(isset($_POST['submit'])){
-$file = $_POST['filename'];
-if (!unlink($file))
-  {
-  echo ("Error deleting $file");
-  }
+$u=mysqli_real_escape_string($conn,$_POST['filename']);
+$o="DELETE FROM files WHERE name='$u'";
+if(mysqli_query($conn,$o))
+header("Refresh:0; url=../download.php");
 else
-  {
-  echo ("Deleted $file");
-  }
+echo 'error';
 }
 ?>
 <form method="POST">
