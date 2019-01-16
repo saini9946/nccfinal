@@ -75,7 +75,7 @@ exit();
 }
 }
 if(isset($_POST['submit6'])){
-	$r=$mysqli_real_escape_string($conn,_POST['notice6']);
+	$r=mysqli_real_escape_string($conn,_POST['notice6']);
 	$q1="UPDATE footer SET emails='$r' where 1";
 	$t=mysqli_query($conn,$q1);
 	if ($t) {
