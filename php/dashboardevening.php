@@ -13,7 +13,7 @@ echo "<form method='POST' action='dashboardevening.php'>
   <thead>
   <input type='date' id='dob' name='dob'
                value='2018-01-22'
-               min='2018-01-01' max='2050-12-31' / required>
+               min='2009-01-01' max='2090-12-31' / required>
     <tr>
       <th>Name</th>
       <th>CRN</th>
