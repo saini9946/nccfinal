@@ -16,11 +16,11 @@ if (!$result)
 else
 {
 	$i = 0;
-	echo '<html><body><table class="table"><tr>';
+	echo '<html><body><table class="table"><tr style="background-color:black" class="sticky-top">';
 	while ($i < mysqli_num_fields($result))
 	{
 		$meta = mysqli_fetch_field($result);
-		echo '<th>' . $meta->name . '</th>';
+		echo '<th style="color:white">' . $meta->name . '</th>';
 		$i = $i + 1;
 	}
 	echo '</tr>';
@@ -53,6 +53,9 @@ else
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+td:first-child {color:white;background-color:black;position:sticky;left:0px;}
+</style>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<title></title>

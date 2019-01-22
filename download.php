@@ -76,10 +76,13 @@ error_reporting(0);
             <div class="row1">
                 <div class="col-1-of-2">
                     <ul><?php 
+                        
                         while($row1=mysqli_fetch_assoc($t)){
-                       $ex=strtolower(end(explode('/',$row1['type'])));
-                        echo '<li><a href="data:'.$row1['type'].';base64,'.base64_encode($row1['file'] ).'" download="'.$row1['name'].'.'.$ex.'">'.$row1['name'].'</a></li>';echo '<br/>';
-                    };
+                       
+                        echo '<li><a target="_blank" href="php/open.php?'.$row1['name'].'">'.$row1['name'].'</a></li>';
+                        
+                        echo '<br/>';
+                    }
                         ?>
                     </ul>
                 </div>

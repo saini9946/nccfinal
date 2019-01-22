@@ -81,10 +81,7 @@ $i++;
 }
 $l2='UPDATE attendance SET TotalLectures=(TotalLectures+1) WHERE 1';
 $q7=mysqli_query($conn,$l2);
-if ($q7) {
-header("Refresh:0; url=admin.php");
-exit();
-}
+ echo "<script language='javascript'>window.location.href = 'admin.php'</script>";
 }
 }
 ?>

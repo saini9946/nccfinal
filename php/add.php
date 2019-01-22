@@ -17,7 +17,7 @@ $o="INSERT INTO attendance(email,name,password,crn,attendance,TotalLectures,Cade
 $q=mysqli_query($conn,$o);
 $o1="INSERT INTO record(crn)VALUES('".$_POST['username']."')";
 $q1=mysqli_query($conn,$o1);
-header("Refresh:0; url=dashboarda.php");
+header("Refresh:0; url=admin.php");
 }
 }
 ?>
