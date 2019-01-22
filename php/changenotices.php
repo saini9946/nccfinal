@@ -11,6 +11,15 @@ $row=mysqli_fetch_assoc($q);
 $p='SELECT * FROM footer';
 $q1=mysqli_query($conn,$p);
 $row1=mysqli_fetch_assoc($q1);
+if(isset($_POST['submi'])){
+	$r=mysqli_real_escape_string($conn,$_POST['notic']);
+	$q1="UPDATE notices SET downloads='$r' where 1";
+	$t=mysqli_query($conn,$q1);
+	if ($t) {
+header("Refresh:0; url=admin.php");
+exit();
+}
+}
 if(isset($_POST['submit'])){
 	$r=mysqli_real_escape_string($conn,$_POST['notice']);
 	$q1="UPDATE notices SET notice='$r' where 1";
@@ -89,6 +98,12 @@ exit();
 ?>
 <link rel="shortcut icon" href="https://www.gndec.ac.in/sites/default/files/acquia_marina_favicon.png" type="image/x-icon" />
 <TITLE>CHANGE HOME</TITLE>
+<form method='POST'><br>DOWNLOADS<br>
+
+	<textarea name="notic" style='height:500px;width:800px;'><?php echo $row['downloads'];?></textarea>
+	 <br><br>
+	 <button value='submit' name='submi'>UPDATE</button>
+	</form>
 
 <form method='POST'><br>NOTICES<br>
 

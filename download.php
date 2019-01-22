@@ -2,6 +2,8 @@
 require 'php/connect.php';
 $r="SELECT * FROM files";
 $t=mysqli_query($conn,$r);
+$r1="SELECT downloads FROM notices";
+$t1=mysqli_query($conn,$r1);
 error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -80,6 +82,12 @@ error_reporting(0);
                         while($row1=mysqli_fetch_assoc($t)){
                        
                         echo '<li><a target="_blank" href="php/open.php?'.$row1['name'].'">'.$row1['name'].'</a></li>';
+                        
+                        echo '<br/>';
+                    }
+                        while($row=mysqli_fetch_assoc($t1)){
+                       
+                        echo '<li>'.$row['downloads'].'</li>';
                         
                         echo '<br/>';
                     }
