@@ -3,6 +3,18 @@ session_start();
 if(!isset($_SESSION['usernamea'])){
     header("Refresh:0; url=index.php");
 }
+?>
+<html>
+<head>
+<style>
+td:first-child {color:white;background-color:black;position:sticky;left:0px;}
+</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title></title>
+</head>
+<body>
+<?php
 require 'connect.php';
 $query="SELECT * FROM record";
 
@@ -16,7 +28,7 @@ if (!$result)
 else
 {
 	$i = 0;
-	echo '<html><body><table class="table-hover table" border=2><tr style="background-color:black;" class="sticky-top">';
+	echo '<table class="table-hover table" border=2><tr style="background-color:black;" class="sticky-top">';
 	while ($i < mysqli_num_fields($result))
 	{
 		$meta = mysqli_fetch_field($result);
@@ -46,21 +58,9 @@ else
 		echo '</tr>';
 		$i = $i + 1;
 	}
-	echo '</table></body></html>';
+	echo '</table>';
 	mysqli_free_result($result);
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-td:first-child {color:white;background-color:black;position:sticky;left:0px;}
-</style>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<title></title>
-</head>
-<body>
-
 </body>
 </html>
