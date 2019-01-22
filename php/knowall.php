@@ -16,7 +16,7 @@ if (!$result)
 else
 {
 	$i = 0;
-	echo '<html><body><table class="table" border=2><tr style="background-color:black;" class="sticky-top">';
+	echo '<html><body><table class="table-hover table" border=2><tr style="background-color:black;" class="sticky-top">';
 	while ($i < mysqli_num_fields($result))
 	{
 		$meta = mysqli_fetch_field($result);
