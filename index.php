@@ -99,46 +99,46 @@ $row=mysqli_fetch_assoc($q)
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="images/carousel-1.jpg" class="img-fluid">
+                            <img src="images/carousel-1.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-2.jpg" class="img-fluid">
+                            <img src="images/carousel-2.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-3.jpg" class="img-fluid">
+                            <img src="images/carousel-3.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-4.jpg" class="img-fluid">
+                            <img src="images/carousel-4.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-5.jpg" class="img-fluid">
+                            <img src="images/carousel-5.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-6.jpg" class="img-fluid">
+                            <img src="images/carousel-6.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-7.jpg" class="img-fluid">
+                            <img src="images/carousel-7.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-8.jpg" class="img-fluid">
+                            <img src="images/carousel-8.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-9.jpg" class="img-fluid">
+                            <img src="images/carousel-9.jpeg" class="img-fluid">
                         </div>
                         <!-- <div class="carousel-item ">
-                            <img src="images/carousel-10.jpg" class="img-fluid">
+                            <img src="images/carousel-10.jpeg" class="img-fluid">
                         </div> -->
                         <div class="carousel-item ">
                             <img src="images/carousel-11.jpg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-12.jpg" class="img-fluid">
+                            <img src="images/carousel-12.jpeg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
                             <img src="images/carousel-13.jpg" class="img-fluid">
                         </div>
                         <div class="carousel-item ">
-                            <img src="images/carousel-14.jpg" class="img-fluid">
+                            <img src="images/carousel-14.jpeg" class="img-fluid">
                         </div>
 
                     </div>
@@ -177,8 +177,7 @@ $row=mysqli_fetch_assoc($q)
                     <p align="justify">
                         Guru Nanak Dev Engineering College, Ludhiana, besides being a premium college for engineering
                         studies, is also a training ground for cadets of NATIONAL CADET CORPS. The NCC cadets of GNDEC
-                        are enrolled under the 3 PUNJAB batallion. The unit currently has vacancy of 306 cadets
-                        including Senior Division (239) and Senior Wing (67). Regular drill sessions are conducted in
+                        are enrolled under the 3 PUNJAB batallion. Regular drill sessions are conducted in
                         sport complex, where the senior cadets impart their skills and Josh to
                         Junior ones. The session starts with a light warm up including two-three rounds of 400 meter
                         track and jumps. Drill sessions are always a delight to watch, where some cadets could be seen
